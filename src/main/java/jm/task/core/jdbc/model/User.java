@@ -1,20 +1,21 @@
 package jm.task.core.jdbc.model;
 
-import javax.persistence.Column;
-import javax.persistence.Id;
-import javax.persistence.Table;
 
-@Table
+import jakarta.persistence.*;
+import jm.task.core.jdbc.dao.UserDao;
+
+@Entity
+@Table(name = "users")
 public class User {
     @Id
+    @SequenceGenerator(name = "users_seq", sequenceName = "users_users_id_seq", allocationSize = 0)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "users_seq")
+    @Column
     private Long id;
-
     @Column
     private String name;
-
     @Column
     private String lastName;
-
     @Column
     private Byte age;
 
@@ -58,5 +59,15 @@ public class User {
 
     public void setAge(Byte age) {
         this.age = age;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", age=" + age +
+                '}';
     }
 }
