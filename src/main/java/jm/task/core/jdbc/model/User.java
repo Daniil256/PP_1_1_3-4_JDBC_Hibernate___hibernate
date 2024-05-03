@@ -2,7 +2,6 @@ package jm.task.core.jdbc.model;
 
 
 import jakarta.persistence.*;
-import jm.task.core.jdbc.dao.UserDao;
 
 @Entity
 @Table(name = "users")

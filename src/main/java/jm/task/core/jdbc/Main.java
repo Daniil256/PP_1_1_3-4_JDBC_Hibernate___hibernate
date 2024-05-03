@@ -7,10 +7,10 @@ public class Main {
         UserServiceImpl userService = new UserServiceImpl();
 
         userService.createUsersTable();
-        userService.saveUser("Daniil", "Kryuchkov", (byte)25);
-        userService.saveUser("Kristina", "Kryuchkova", (byte)28);
-        userService.saveUser("Lexa", "Krasnyi", (byte)24);
-        userService.saveUser("Semen", "Vasilev", (byte)5);
+        userService.saveUser("Daniil", "Kryuchkov", (byte) 25);
+        userService.saveUser("Kristina", "Kryuchkova", (byte) 28);
+        userService.saveUser("Lexa", "Krasnyi", (byte) 24);
+        userService.saveUser("Semen", "Vasilev", (byte) 5);
         userService.getAllUsers().forEach(System.out::println);
         userService.cleanUsersTable();
         userService.dropUsersTable();
